@@ -3,7 +3,7 @@ jQuery(document).ready(()=>{
 	jQuery('.eps_title').click((evt)=>{
 		var eps_id = jQuery(evt.target).attr('data-eps-id');
 		if(eps_id>0){
-			loadEps(eps_id,true);
+			loadEpsNoNimble(eps_id,true);
 		}
 	});
 
