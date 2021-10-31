@@ -135,3 +135,16 @@ function loadEps(eps_id,auto_play=false){
 	return false;
 	
 }
+
+function loadEpsNoNimble(eps_id,auto_play=false){
+	jQuery.get('/movie_8.m3u8',{eps_id},(data)=>{
+			//console.log(data,window.location);
+			//data = data.replaceAll('.txt','.txt'+nimble);
+			var blob = new Blob([data],{type:'text/plain'});
+			var url = URL.createObjectURL(blob);
+			console.log(url);
+			playURL(url,auto_play);
+			
+			
+		});
+}
